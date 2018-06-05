@@ -1,16 +1,16 @@
 import React , {Component} from 'react'
 
-class FormComponent extends Component {
+class Form extends Component {
     
     state = {
         name : "",
         address : ""
     }
 
-    create = (e) => {
+    handleSubmit = (e) => {
         e.preventDefault();
         const {name : n , address : a} = this.state
-        this.props.contacts({name : n , address : a})
+        this.props.onSubmit({name : n , address : a})
         // console.log(this.referName.value,this.referAddress.value)
         console.log(this.state)
         this.clearForm();
@@ -41,11 +41,11 @@ class FormComponent extends Component {
                 <label htmlFor="address" >Address</label>
                 <input type="text" value={address} htmlFor="address" id="address" ref={(input) => {this.referAddress = input}} onChange = {this.changeState('address')} />
                 </div>
-                <input type="submit" value="Create" onClick={this.create}/>
+                <input type="submit" value="Create" onClick={this.handleSubmit}/>
             </form>
         )
     }
 
 }
 
-export default FormComponent;
+export default Form;

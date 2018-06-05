@@ -1,6 +1,6 @@
 import React from "react"
 
-const ContactContent = (props) => {
+const Contact = (props) => {
     return (
         // <p>{props.contacts}</p>
         
@@ -12,4 +12,8 @@ const ContactContent = (props) => {
     )
 }
 
-export default ContactContent
+Contact.defaultProps = {
+    contacts:[]
+}
+
+export default Contact

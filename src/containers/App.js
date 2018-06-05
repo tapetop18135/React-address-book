@@ -1,6 +1,9 @@
 import React , {Component} from 'react'
-import Form  from './form'
-import Contact from './contact'
+// import Form  from '../components/form'
+// import Contact from '../components/contact'
+import {Form , Contact}  from '../components/index'
+// import Jqtest from '../components/test'
+
 
 class App extends Component {
     state = {
@@ -13,7 +16,7 @@ class App extends Component {
       return(
         <div className="Content">
           <h1>Address Form</h1>
-          <Form contacts={this.createConcat} />          
+          <Form onSubmit={this.createConcat} />          
           <br/>
           <hr/>
           <Contact {...this.state} />
